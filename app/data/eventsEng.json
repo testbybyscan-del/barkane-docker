@@ -1,0 +1,20 @@
+  
+            
+  {
+        "name": "description",
+        "date": "2025-01-09",
+        "time": "19:00",
+        "venue": "all","concerthall","nightclub","outdoors","by_the_sea","On_the_yacht"
+        "theme": "all","music","art","coocking","health","sport","automoto","mountaineering","history","ethnography","society","ecology"
+        "for_kids": boolean,
+        "is_free": boolean,
+        "has_food": boolean,
+        "has_alcohol": boolean,
+        "has_transfer": boolean,
+        "event_type": "all","concert","lecture","exhibition","masterclass","yacht","creative_evening","disco","competition"
+        "city": "all","simferopol","sevastopol","evpatoria","jalta","saki","feodosia","kerch","Alushta","Alupka","Gurzuf"
+    }          
+         
+         
+         
+       

@@ -1,0 +1,8 @@
+Примеры GET-запросов:
+
+
+https://jamesbot.su/barkane/eventsget.php?start_date=07-01-2025&end_date=09-01-2025&city=Симферополь&venue=любое&theme=любая&event_type=любые
+
+https://jamesbot.su/barkane/eventsget.php?start_date=08-01-2025&end_date=18-01-2025&city=Керчь&venue=вне+помещений&theme=музыка&event_type=концерт&for_kids=on&is_free=on&has_food=on
+
+https://jamesbot.su/barkane/eventsget.php?start_date=09-01-2025&end_date=09-01-2025&city=Феодосия&venue=музей&theme=этнография&event_type=лекция&is_free=on
