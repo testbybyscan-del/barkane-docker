@@ -1,5 +1,5 @@
 .env
 postgres_data/
-app/data/
+# app/data/
 *.log
 .DS_Store
