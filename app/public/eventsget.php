@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-// Подключаем автозагрузку Composer — все классы из src/ загрузятся автоматически
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\EventRepository;
@@ -41,7 +40,13 @@ header('Content-Type: text/html; charset=utf-8');
             <ul>
                 <?php foreach ($event as $key => $value): ?>
                     <li><strong><?= htmlspecialchars($key) ?>:</strong> 
-                        <?= is_bool($value) ? ($value ? 'Да' : 'Нет') : htmlspecialchars($value ?? '') ?>
+                        <?php
+                        if (is_bool($value)) {
+                            echo $value ? 'Да' : 'Нет';
+                        } else {
+                            echo htmlspecialchars((string)($value ?? ''));
+                        }
+                        ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
