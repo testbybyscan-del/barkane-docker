@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
-require_once __DIR__ . '/../src/EventRepository.php';
-require_once 'db.php';
+// Подключаем автозагрузку Composer — все классы из src/ загрузятся автоматически
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\EventRepository;
 
