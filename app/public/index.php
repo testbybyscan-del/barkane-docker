@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- обновлены пути к ресурсам -->
+<!-- обновлены пути к ресурсам, убран target="_blank", добавлен скрипт для AJAX и модального окна -->
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -17,8 +17,7 @@
         </div>
     </header>
 
-    <!-- Изменён action и добавлен target="_blank" для открытия результатов в новой вкладке -->
-    <form action="eventsget.php" method="get" target="_blank">
+    <form action="eventsget.php" method="get">
         <label>Укажите удобный Вам диапазон дат проведения мероприятия:</label>
         <input type="text" id="start_date" name="start_date" readonly placeholder="С">
         <input type="text" id="end_date" name="end_date" readonly placeholder="По">
@@ -103,7 +102,58 @@
         <input type="submit" value="Применить фильтры">
     </form>
 
-    <script src="/js/filters.js"></script>
+    <!-- Подключаем скрипты (filters.js удалён, так как теперь всё через AJAX) -->
     <script src="/js/rotation.js"></script>
+
+    <script>
+        $(function() {
+            // Обработчик отправки формы через AJAX
+            $('form').on('submit', function(e) {
+                e.preventDefault(); // отменяем стандартную отправку
+
+                var formData = $(this).serialize(); // собираем все поля
+
+                // Проверяем наличие дат – можно оставить как дополнительную проверку
+                var start = $('#start_date').val().trim();
+                var end = $('#end_date').val().trim();
+                if (!start || !end) {
+                    alert('Пожалуйста, укажите диапазон дат!');
+                    return;
+                }
+
+                $.ajax({
+                    url: 'eventsget.php',
+                    data: formData,
+                    type: 'GET',
+                    dataType: 'html',
+                    success: function(response) {
+                        // Создаём/обновляем контейнер для диалога
+                        var $dialog = $('#modal-container');
+                        if ($dialog.length === 0) {
+                            $dialog = $('<div id="modal-container"></div>').appendTo('body');
+                        }
+                        $dialog.html(response).dialog({
+                            modal: true,
+                            width: '80%',
+                            maxWidth: 800,
+                            title: 'Результаты поиска',
+                            buttons: {
+                                "Закрыть": function() {
+                                    $(this).dialog('close');
+                                }
+                            },
+                            close: function() {
+                                // Очищаем содержимое при закрытии
+                                $(this).empty();
+                            }
+                        });
+                    },
+                    error: function() {
+                        alert('Ошибка загрузки данных. Попробуйте позже.');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
