@@ -1,22 +1,41 @@
-barkane-docker/
-├── .env
-├── .gitignore
+├── app
+│   ├── 640360barkane.jpg
+│   ├── check.js
+│   ├── data
+│   │   ├── eventsEng.json
+│   │   ├── events.json
+│   │   ├── events.json.bak
+│   │   ├── eventsRu.json
+│   │   ├── exampleGET.txt
+│   │   ├── getData.json
+│   │   └── readme.txt
+│   ├── datepicker.js
+│   ├── db.php
+│   ├── eventsget.php
+│   ├── events.php
+│   ├── favourites.php
+│   ├── filters.js
+│   ├── index.php
+│   ├── public
+│   │   ├── db.php
+│   │   ├── eventsget.php
+│   │   ├── events.php
+│   │   ├── import.php
+│   │   └── index.php
+│   ├── rotation.js
+│   ├── src
+│   │   ├── Database.php
+│   │   ├── EventRepository.php
+│   │   └── FilterBuilder.php
+│   └── styles.css
 ├── docker-compose.yml
-├── nginx/
-│   └── default.conf
-├── php/
-│   └── Dockerfile
-├── init-db/
-│   └── init.sql
-└── app/
-    ├── index.php
-    ├── events.php
-    ├── eventsget.php
-    ├── favourites.php
-    ├── db.php
-    ├── datepicker.js
-    ├── check.js
-    ├── filters.js
-    ├── rotation.js
-    ├── styles.css
-    └── 640360barkane.jpg
+├── .gitignore
+├── init-db
+│   ├── 01-schema.sql
+│   ├── 02-functions.sql
+│   └── init.sql
+├── nginx
+│   └── default.conf
+├── php
+│   └── Dockerfile
+└── structure
