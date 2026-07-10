@@ -17,7 +17,8 @@
         </div>
     </header>
 
-    <form action="events.php" method="get">
+    <!-- Изменён action и добавлен target="_blank" для открытия результатов в новой вкладке -->
+    <form action="eventsget.php" method="get" target="_blank">
         <label>Укажите удобный Вам диапазон дат проведения мероприятия:</label>
         <input type="text" id="start_date" name="start_date" readonly placeholder="С">
         <input type="text" id="end_date" name="end_date" readonly placeholder="По">
