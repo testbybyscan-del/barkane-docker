@@ -10,7 +10,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./init-db:/docker-entrypoint-initdb.d
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
       - barkane_net
 
@@ -34,7 +34,7 @@ services:
     container_name: barkane_nginx
     restart: always
     ports:
-      - "80:80"
+      - "8099:80"
     volumes:
       - ./app:/var/www/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
