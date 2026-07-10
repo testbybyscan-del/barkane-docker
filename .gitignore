@@ -3,3 +3,4 @@ postgres_data/
 # app/data/
 *.log
 .DS_Store
+"barkane-docker/" 
